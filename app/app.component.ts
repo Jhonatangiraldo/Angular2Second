@@ -8,17 +8,10 @@ import {  Hero } from './hero';
 
 //The app's code defines the data directly inside the component, which isn't best practice
 export class AppComponent {
-  title: string;
-  myHero: Hero;
-  heroes: Hero[];
-
-
-  constructor(){
-    this.title = 'Tour of Heroes';
-    this.heroes = [ new Hero(1, "Jhonatan"),
-                    new Hero(2, "Andres"),
-                    new Hero(3, "Giraldo") ];
-    this.myHero = this.heroes[0];
-    
+  heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
+  addHero(newHero: string) {
+    if (newHero) {
+      this.heroes.push(newHero);
+    }
   }
 }

@@ -9,15 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var hero_1 = require('./hero');
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'Tour of Heroes';
-        this.heroes = [new hero_1.Hero(1, "Jhonatan"),
-            new hero_1.Hero(2, "Andres"),
-            new hero_1.Hero(3, "Giraldo")];
-        this.myHero = this.heroes[0];
+        this.heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
     }
+    AppComponent.prototype.addHero = function (newHero) {
+        if (newHero) {
+            this.heroes.push(newHero);
+        }
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
