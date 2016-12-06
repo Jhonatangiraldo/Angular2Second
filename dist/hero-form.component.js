@@ -9,20 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var AppModule = (function () {
-    function AppModule() {
+var hero_1 = require('./hero');
+var HeroFormComponent = (function () {
+    function HeroFormComponent() {
+        this.powers = ['Really Smart', 'Super Flexible',
+            'Super Hot', 'Weather Changer'];
+        this.model = new hero_1.Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+        this.submitted = false;
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent]
+    HeroFormComponent.prototype.onSubmit = function () { this.submitted = true; };
+    HeroFormComponent.prototype.newHero = function () {
+        this.model = new hero_1.Hero(42, '', '');
+    };
+    HeroFormComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'hero-form',
+            templateUrl: 'hero-form.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], HeroFormComponent);
+    return HeroFormComponent;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.HeroFormComponent = HeroFormComponent;
+//# sourceMappingURL=hero-form.component.js.map
