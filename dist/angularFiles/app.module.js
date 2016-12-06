@@ -9,23 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var hero_1 = require('./hero');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Tour of Heroes';
-        this.heroes = [new hero_1.Hero(1, "Jhonatan"),
-            new hero_1.Hero(2, "Andres"),
-            new hero_1.Hero(3, "Giraldo")];
-        this.myHero = this.heroes[0];
+var platform_browser_1 = require('@angular/platform-browser');
+var app_component_1 = require('./app.component');
+var AppModule = (function () {
+    function AppModule() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'app/app.component.html' /*Remember, the references is from index.html */
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [platform_browser_1.BrowserModule],
+            declarations: [app_component_1.AppComponent],
+            bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], AppModule);
+    return AppModule;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.AppModule = AppModule;
+//# sourceMappingURL=app.module.js.map
